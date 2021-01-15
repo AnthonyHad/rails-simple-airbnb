@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+puts "destroying flats"
+Flat.destroy_all
+15.times do
+puts "creating flight"
+Flat.create!(
+  name: Faker::Address.street_name,
+  address: Faker::Address.street_address,
+  description: 'A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
+  price_per_night: Faker::Number.number(digits: 3),
+  number_of_guests: Faker::Number.decimal_part(digits: 2)
+)
+end
