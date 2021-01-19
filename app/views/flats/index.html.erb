@@ -1,5 +1,5 @@
 <div class="container">
-  <h1> Here are all the Flats!</h1>
+  <h1> Here are all the Flats! <%= "(#{@flats.count})" %></h1>
    <div class="row">
       <% @flats.each do |flat|  %>
         <div class="cards col-3 offset-1">
@@ -12,6 +12,7 @@
         </div>
       <% end  %>
   </div>
+  <%= link_to "Add a Flat", new_flat_path %>
 </div>
 
 
