@@ -11,4 +11,6 @@
     <h1>Details</h1>
     <p>Price Per Night:<%= @flat.price_per_night%>  | Sleeps:<%= @flat.number_of_guests %></p>
   </div>
+  <%= link_to "Edit!", edit_flat_path(@flat), class: "btn btn-outline-primary h-50" %>
+  <%= link_to "Delete", flat_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-primary h-50" %>
 </div>
